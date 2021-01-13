@@ -1,0 +1,911 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/gameplay_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/landscape_background">
+
+    <Button
+        android:id="@+id/approve"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/Decline"
+        android:layout_alignBottom="@+id/Decline"
+        android:layout_marginStart="29dp"
+        android:layout_toEndOf="@+id/check_small_layout"
+        android:background="@drawable/button_border"
+        android:onClick="approveButton"
+        android:text="Approve"
+        android:textColor="#129924" />
+
+    <Button
+        android:id="@+id/Decline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/check_small_layout"
+        android:layout_marginStart="34dp"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@+id/approve"
+        android:background="@drawable/button_border"
+        android:onClick="declineButton"
+        android:text="Decline"
+        android:textColor="#c80815" />
+
+    <RelativeLayout
+        android:id="@+id/check_small_layout"
+        android:layout_width="300dp"
+        android:layout_height="150dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="20dp"
+        android:visibility="visible">
+
+        <ImageView
+            android:id="@+id/check_small_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/check_background" />
+
+        <TextView
+            android:id="@+id/check_small_pay_to_the_order_of"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/check_small_date"
+            android:layout_below="@+id/check_small_date"
+            android:layout_marginTop="8dp"
+            android:fontFamily="serif-monospace"
+            android:text="Company Name"
+            android:textColor="@android:color/black" />
+
+        <TextView
+            android:id="@+id/check_small_total_numbers"
+            android:layout_width="50dp"
+            android:layout_height="20dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignTop="@+id/check_small_pay_to_the_order_of"
+            android:layout_marginEnd="17dp"
+            android:fontFamily="serif"
+            android:text="200"
+            android:textColor="@android:color/black"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/check_small_total_written"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/check_small_total_numbers"
+            android:layout_marginTop="22dp"
+            android:layout_toStartOf="@+id/check_small_total_numbers"
+            android:fontFamily="serif-monospace"
+            android:text="Two Hundred and 0/100"
+            android:textColor="@android:color/black" />
+
+        <TextView
+            android:id="@+id/check_small_for"
+            android:layout_width="115dp"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/check_small_total_written"
+            android:layout_below="@+id/check_small_total_written"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="serif"
+            android:text="Computer System"
+            android:textColor="@android:color/black"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/check_small_signature"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/check_small_account_number"
+            android:layout_alignEnd="@+id/check_small_total_numbers"
+            android:fontFamily="@font/dawning_of_a_new_day"
+            android:text="Jacob Longfield"
+            android:textColor="@android:color/black"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/check_small_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignStart="@+id/check_small_signature"
+            android:layout_marginTop="23dp"
+            android:fontFamily="serif"
+            android:text="1/22/18"
+            android:textColor="@android:color/black"
+            android:textSize="8sp" />
+
+        <TextView
+            android:id="@+id/check_small_routing_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/check_small_for"
+            android:layout_below="@+id/check_small_signature"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="3dp"
+            android:fontFamily="@font/stalinist_one"
+            android:text="000000158"
+            android:textColor="@android:color/black"
+            android:textSize="6sp" />
+
+        <TextView
+            android:id="@+id/check_small_account_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/check_small_for"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="3dp"
+            android:layout_toEndOf="@+id/check_small_routing_number"
+            android:fontFamily="@font/stalinist_one"
+            android:text="489652728"
+            android:textColor="@android:color/black"
+            android:textSize="6sp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/id_small_layout"
+        android:layout_width="250dp"
+        android:layout_height="150dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="130dp"
+        android:layout_marginTop="180dp"
+        android:visibility="visible">
+
+        <ImageView
+            android:id="@+id/id_small_background"
+            android:layout_width="300dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:scaleType="centerCrop"
+            android:visibility="visible"
+            app:srcCompat="@drawable/id_background" />
+
+        <ImageView
+            android:id="@+id/id_small_photograph"
+            android:layout_width="42dp"
+            android:layout_height="54dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginEnd="6dp"
+            android:layout_marginTop="40dp"
+            android:layout_toStartOf="@+id/id_small_address"
+            android:foreground="@android:drawable/ic_input_add"
+            android:scaleType="fitCenter" />
+
+        <TextView
+            android:id="@+id/id_small_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/id_small_date_of_birth"
+            android:layout_centerVertical="true"
+            android:text="Android Character"
+            android:textColor="@android:color/black"
+            android:textSize="8sp" />
+
+        <TextView
+            android:id="@+id/id_small_date_of_birth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/id_small_photograph"
+            android:layout_centerHorizontal="true"
+            android:text="01/01/1997"
+            android:textColor="@android:color/black"
+            android:textSize="6sp" />
+
+        <TextView
+            android:id="@+id/id_small_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/id_small_date_of_birth"
+            android:layout_marginEnd="6dp"
+            android:layout_toStartOf="@+id/id_small_date_of_birth"
+            android:text="Address"
+            android:textColor="@android:color/black"
+            android:textSize="6sp" />
+
+        <TextView
+            android:id="@+id/id_small_sex"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/id_small_address"
+            android:layout_below="@+id/id_small_address"
+            android:layout_marginTop="10dp"
+            android:text="Male"
+            android:textColor="@android:color/black"
+            android:textSize="6sp" />
+
+        <TextView
+            android:id="@+id/id_small_height"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/id_small_sex"
+            android:layout_toStartOf="@+id/id_small_signature"
+            android:text="6&quot; 2'"
+            android:textColor="@android:color/black"
+            android:textSize="6sp" />
+
+        <TextView
+            android:id="@+id/id_small_issued"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/id_small_height"
+            android:layout_toEndOf="@+id/id_small_sex"
+            android:text="10/17/89"
+            android:textColor="@android:color/black"
+            android:textSize="6sp" />
+
+        <TextView
+            android:id="@+id/id_small_expires"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/id_small_issued"
+            android:layout_alignBottom="@+id/id_small_issued"
+            android:layout_alignEnd="@+id/id_small_signature"
+            android:layout_marginEnd="15dp"
+            android:text="10/17/98"
+            android:textColor="@android:color/black"
+            android:textSize="6sp" />
+
+        <TextView
+            android:id="@+id/id_small_signature"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/id_small_date_of_birth"
+            android:layout_below="@+id/id_small_address"
+            android:fontFamily="cursive"
+            android:text="Jacob Longfield"
+            android:textColor="@android:color/black"
+            android:textSize="12sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/deposit_slip_small_layout"
+        android:layout_width="350dp"
+        android:layout_height="150dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/deposit_slip_small_background"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="150dp"
+            app:srcCompat="@drawable/deposit_slip_background" />
+
+        <TextView
+            android:id="@+id/deposit_slip_small_line1"
+            android:layout_width="45dp"
+            android:layout_height="10dp"
+            android:layout_alignBottom="@+id/deposit_slip_small_line2"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="12dp"
+            android:layout_marginEnd="24dp"
+            android:text="TextView"
+            android:textColor="@android:color/black"
+            android:textSize="8sp" />
+
+        <TextView
+            android:id="@+id/deposit_slip_small_line2"
+            android:layout_width="45dp"
+            android:layout_height="10dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignStart="@+id/deposit_slip_small_line1"
+            android:layout_marginTop="46dp"
+            android:text="TextView"
+            android:textColor="@android:color/black"
+            android:textSize="8sp" />
+
+        <TextView
+            android:id="@+id/deposit_slip_small_line3"
+            android:layout_width="45dp"
+            android:layout_height="10dp"
+            android:layout_alignStart="@+id/deposit_slip_small_line2"
+            android:layout_below="@+id/deposit_slip_small_line2"
+            android:layout_marginTop="4dp"
+            android:text="TextView"
+            android:textColor="@android:color/black"
+            android:textSize="8sp" />
+
+        <TextView
+            android:id="@+id/deposit_slip_small_line4"
+            android:layout_width="45dp"
+            android:layout_height="10dp"
+            android:layout_alignStart="@+id/deposit_slip_small_line3"
+            android:layout_below="@+id/deposit_slip_small_line3"
+            android:layout_marginTop="4dp"
+            android:text="TextView"
+            android:textColor="@android:color/black"
+            android:textSize="8sp" />
+
+        <TextView
+            android:id="@+id/deposit_slip_small_line5"
+            android:layout_width="45dp"
+            android:layout_height="10dp"
+            android:layout_alignStart="@+id/deposit_slip_small_line4"
+            android:layout_below="@+id/deposit_slip_small_line4"
+            android:layout_marginTop="4dp"
+            android:text="TextView"
+            android:textColor="@android:color/black"
+            android:textSize="8sp" />
+
+        <TextView
+            android:id="@+id/deposit_slip_small_total_line"
+            android:layout_width="45dp"
+            android:layout_height="10dp"
+            android:layout_alignStart="@+id/deposit_slip_small_line5"
+            android:layout_below="@+id/deposit_slip_small_line5"
+            android:layout_marginTop="4dp"
+            android:text="TextView"
+            android:textColor="@android:color/black"
+            android:textSize="8sp" />
+
+        <TextView
+            android:id="@+id/deposit_slip_small_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/deposit_slip_small_background"
+            android:layout_alignTop="@+id/deposit_slip_small_line2"
+            android:layout_marginStart="30dp"
+            android:text="2/1/2018"
+            android:textColor="@android:color/black" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/passport_small"
+        android:layout_width="300dp"
+        android:layout_height="200dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="400dp"
+        android:layout_marginTop="180dp"
+        android:visibility="visible">
+
+        <ImageView
+            android:id="@+id/passport_small_background"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/passport_background" />
+
+        <ImageView
+            android:id="@+id/passport_small_image"
+            android:layout_width="50dp"
+            android:layout_height="47dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="42dp"
+            android:adjustViewBounds="false"
+            android:foreground="@drawable/passport_background"
+            android:scaleType="fitCenter" />
+
+        <TextView
+            android:id="@+id/passport_small_name"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/passport_small_image"
+            android:layout_marginStart="29dp"
+            android:layout_toEndOf="@+id/passport_small_image"
+            android:text="Jacob Longfield"
+            android:textColor="@android:color/black"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/passport_small_date_of_birth"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/passport_small_name"
+            android:layout_below="@+id/passport_small_name"
+            android:layout_marginTop="6dp"
+            android:text="02/02/18"
+            android:textColor="@android:color/black"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/passport_small_expires_date"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/passport_small_date_of_birth"
+            android:layout_below="@+id/passport_small_date_of_birth"
+            android:layout_marginStart="13dp"
+            android:text="02/02/21"
+            android:textColor="@android:color/black"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/passport_small_signature"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignStart="@+id/passport_small_image"
+            android:layout_marginBottom="24dp"
+            android:fontFamily="cursive"
+            android:text="Signature"
+            android:textColor="@android:color/black"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/passport_small_sex"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/passport_small_image"
+            android:layout_below="@+id/passport_small_image"
+            android:layout_marginTop="10dp"
+            android:text="Male"
+            android:textColor="@android:color/black"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/passport_small_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/passport_small_sex"
+            android:layout_below="@+id/passport_small_sex"
+            android:layout_marginTop="10dp"
+            android:text="Address"
+            android:textColor="@android:color/black"
+            android:textSize="10sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/check_large_layout"
+        android:layout_width="550dp"
+        android:layout_height="300dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="81dp"
+        android:layout_marginTop="10dp"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/check_large_background"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/check_background" />
+
+        <TextView
+            android:id="@+id/check_large_pay_to_the_order_of"
+            android:layout_width="275dp"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/check_large_total_written"
+            android:layout_marginBottom="30dp"
+            android:layout_marginEnd="50dp"
+            android:layout_toStartOf="@+id/check_large_total_number"
+            android:text="Company Name"
+            android:textColor="@android:color/black"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/check_large_total_number"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/check_large_pay_to_the_order_of"
+            android:layout_alignBottom="@+id/check_large_pay_to_the_order_of"
+            android:layout_alignEnd="@+id/check_large_signature"
+            android:layout_marginEnd="8dp"
+            android:text="200"
+            android:textColor="@android:color/black"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/check_large_total_written"
+            android:layout_width="390dp"
+            android:layout_height="40dp"
+            android:layout_above="@+id/check_large_for"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="44dp"
+            android:text="Two Hundered 0/100"
+            android:textColor="@android:color/black"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/check_large_for"
+            android:layout_width="240dp"
+            android:layout_height="40dp"
+            android:layout_alignBottom="@+id/check_large_signature"
+            android:layout_alignStart="@+id/check_large_total_written"
+            android:layout_marginStart="27dp"
+            android:text="Computer System"
+            android:textColor="@android:color/black"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/check_large_signature"
+            android:layout_width="190dp"
+            android:layout_height="40dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="60dp"
+            android:layout_marginStart="24dp"
+            android:layout_toEndOf="@+id/check_large_for"
+            android:fontFamily="cursive"
+            android:text="Jacob Longfield"
+            android:textColor="@android:color/black"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/check_large_routing_number"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/check_large_acount_number"
+            android:layout_alignBottom="@+id/check_large_acount_number"
+            android:layout_toStartOf="@+id/check_large_acount_number"
+            android:fontFamily="sans-serif-smallcaps"
+            android:text="000000158"
+            android:textColor="@android:color/black"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/check_large_acount_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/check_large_for"
+            android:layout_below="@+id/check_large_for"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/stalinist_one"
+            android:text="0001248"
+            android:textColor="@android:color/black"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/check_large_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/check_large_total_number"
+            android:layout_alignStart="@+id/check_large_signature"
+            android:layout_marginBottom="22dp"
+            android:layout_marginStart="12dp"
+            android:text="1/18/18"
+            android:textColor="@android:color/black" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/id_large_layout"
+        android:layout_width="400dp"
+        android:layout_height="350dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/id_large_background"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:scaleType="centerCrop"
+            android:visibility="visible"
+            app:srcCompat="@drawable/id_background" />
+
+        <ImageView
+            android:id="@+id/id_large_photograph"
+            android:layout_width="76dp"
+            android:layout_height="100dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="109dp" />
+
+        <TextView
+            android:id="@+id/id_large_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/id_large_photograph"
+            android:layout_marginBottom="34dp"
+            android:layout_marginStart="50dp"
+            android:layout_toEndOf="@+id/id_large_photograph"
+            android:text="Android Character"
+            android:textColor="@android:color/black"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/id_large_date_of_birth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/id_large_photograph"
+            android:layout_alignStart="@+id/id_large_name"
+            android:text="01/01/1997"
+            android:textColor="@android:color/black"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/id_large_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/id_large_date_of_birth"
+            android:layout_below="@+id/id_large_date_of_birth"
+            android:text="Address"
+            android:textColor="@android:color/black"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/id_large_sex"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/id_large_date_of_birth"
+            android:layout_below="@+id/id_large_address"
+            android:layout_marginTop="10dp"
+            android:text="Male"
+            android:textColor="@android:color/black"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/id_large_height"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/id_large_sex"
+            android:layout_below="@+id/id_large_sex"
+            android:layout_marginTop="10dp"
+            android:text="6&quot; 2'"
+            android:textColor="@android:color/black"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/id_large_issued"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/id_large_height"
+            android:layout_below="@+id/id_large_height"
+            android:layout_marginTop="6dp"
+            android:text="10/17/89"
+            android:textColor="@android:color/black"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/id_large_expires"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/id_large_issued"
+            android:layout_alignBottom="@+id/id_large_issued"
+            android:layout_alignEnd="@+id/id_large_signature"
+            android:layout_marginEnd="18dp"
+            android:text="10/17/98"
+            android:textColor="@android:color/black"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/id_large_signature"
+            android:layout_width="175dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/id_large_address"
+            android:layout_marginStart="6dp"
+            android:layout_toEndOf="@+id/id_large_sex"
+            android:fontFamily="cursive"
+            android:text="Jacob Longfield"
+            android:textColor="@android:color/black"
+            android:textSize="18sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/deposit_slip_large_layout"
+        android:layout_width="350dp"
+        android:layout_height="250dp"
+        android:layout_below="@+id/id_small_layout"
+        android:layout_marginStart="106dp"
+        android:layout_marginTop="40dp"
+        android:layout_toEndOf="@+id/check_large_layout"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/deposit_slip_large_background"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="12dp"
+            app:srcCompat="@drawable/deposit_slip_background" />
+
+        <TextView
+            android:id="@+id/deposit_slip_large_line1"
+            android:layout_width="75dp"
+            android:layout_height="15dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginEnd="40dp"
+            android:layout_marginTop="56dp"
+            android:text="TextView"
+            android:textColor="@android:color/black"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/deposit_slip_large_line2"
+            android:layout_width="75dp"
+            android:layout_height="15dp"
+            android:layout_alignStart="@+id/deposit_slip_large_line1"
+            android:layout_alignTop="@+id/deposit_slip_large_line1"
+            android:layout_marginTop="20dp"
+            android:text="TextView"
+            android:textColor="@android:color/black"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/deposit_slip_large_line3"
+            android:layout_width="75dp"
+            android:layout_height="15dp"
+            android:layout_alignBaseline="@+id/deposit_slip_large_date2"
+            android:layout_alignBottom="@+id/deposit_slip_large_date2"
+            android:layout_alignStart="@+id/deposit_slip_large_line2"
+            android:text="TextView"
+            android:textColor="@android:color/black"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/deposit_slip_large_line4"
+            android:layout_width="75dp"
+            android:layout_height="15dp"
+            android:layout_alignStart="@+id/deposit_slip_large_line3"
+            android:layout_below="@+id/deposit_slip_large_line3"
+            android:layout_marginTop="7dp"
+            android:text="TextView"
+            android:textColor="@android:color/black"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/deposit_slip_large_line5"
+            android:layout_width="75dp"
+            android:layout_height="15dp"
+            android:layout_alignStart="@+id/deposit_slip_large_line4"
+            android:layout_below="@+id/deposit_slip_large_line4"
+            android:layout_marginTop="6dp"
+            android:text="TextView"
+            android:textColor="@android:color/black"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/deposit_slip_large_total_line"
+            android:layout_width="90dp"
+            android:layout_height="15dp"
+            android:layout_alignEnd="@+id/deposit_slip_large_line5"
+            android:layout_below="@+id/deposit_slip_large_line5"
+            android:layout_marginTop="11dp"
+            android:text="TextView"
+            android:textColor="@android:color/black"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/deposit_slip_large_date_temp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:text="2/1/2018"
+            android:textColor="@android:color/black"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/deposit_slip_large_date2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/deposit_slip_large_background"
+            android:layout_below="@+id/deposit_slip_large_line2"
+            android:layout_marginStart="64dp"
+            android:text="2/1/2018"
+            android:textColor="@android:color/black" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/passport_large"
+        android:layout_width="400dp"
+        android:layout_height="300dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="400dp"
+        android:layout_marginTop="160dp"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/passport_large_background"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/passport_background" />
+
+        <ImageView
+            android:id="@+id/passport_large_image"
+            android:layout_width="67dp"
+            android:layout_height="63dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="72dp" />
+
+        <TextView
+            android:id="@+id/passport_large_name"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/passport_large_image"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_toEndOf="@+id/passport_large_signature"
+            android:text="Jacob Longfield"
+            android:textColor="@android:color/black"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/passport_large_date_of_birth"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/passport_large_name"
+            android:layout_below="@+id/passport_large_name"
+            android:layout_marginTop="6dp"
+            android:text="02/02/18"
+            android:textColor="@android:color/black"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/passport_large_expires_date"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/passport_large_date_of_birth"
+            android:layout_below="@+id/passport_large_date_of_birth"
+            android:layout_marginStart="13dp"
+            android:text="02/02/21"
+            android:textColor="@android:color/black"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/passport_large_signature"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignStart="@+id/passport_large_image"
+            android:layout_marginBottom="52dp"
+            android:fontFamily="cursive"
+            android:text="Signature"
+            android:textColor="@android:color/black"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/passport_large_sex"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/passport_large_image"
+            android:layout_below="@+id/passport_large_image"
+            android:layout_marginTop="14dp"
+            android:text="Male"
+            android:textColor="@android:color/black" />
+
+        <TextView
+            android:id="@+id/passport_large_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/passport_large_sex"
+            android:layout_below="@+id/passport_large_sex"
+            android:layout_marginTop="11dp"
+            android:text="Address"
+            android:textColor="@android:color/black"
+            android:textSize="12sp" />
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/counter_view"
+        android:layout_width="250dp"
+        android:layout_height="300dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
+        android:visibility="gone" />
+
+</RelativeLayout>
